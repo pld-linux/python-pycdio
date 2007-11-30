@@ -9,7 +9,8 @@ Source0:	http://ftp.gnu.org/gnu/libcdio/pycdio-%{version}.tar.gz
 # Source0-md5:	dc54be352c00457e8c040cd19a434cf0
 URL:		http://www.gnu.org/software/libcdio/
 BuildRequires:	libcdio-devel >= 0.76
-BuildRequires:	python >= 1:2.3.5
+BuildRequires:	pkgconfig
+BuildRequires:	python-devel >= 1:2.3.5
 BuildRequires:	rpm-pythonprov
 BuildRequires:	swig-python
 %pyrequires_eq	python-libs
