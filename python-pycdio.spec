@@ -1,17 +1,18 @@
 Summary:	Python bindings for libcdio
 Summary(pl.UTF-8):	Wiązania Pythona do libcdio
 Name:		python-pycdio
-Version:	0.13
+Version:	0.16
 Release:	1
 License:	GPL v2+
 Group:		Libraries/Python
 Source0:	http://ftp.gnu.org/gnu/libcdio/pycdio-%{version}.tar.gz
-# Source0-md5:	dc54be352c00457e8c040cd19a434cf0
+# Source0-md5:	bb2ffea5ae107e1e545f54f8bd9d6172
 URL:		http://www.gnu.org/software/libcdio/
 BuildRequires:	libcdio-devel >= 0.76
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.3.5
 BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	swig-python
 %pyrequires_eq	python-libs
 Requires:	libcdio >= 0.76
@@ -39,33 +40,34 @@ Przykładowe programy w Pythonie używające libcdio.
 %setup -q -n pycdio-%{version}
 
 %build
-%configure
-
-%{__make}
+export CFLAGS="%{rpmcflags}"
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%{__python} setup.py install \
+	--optimize=2 \
+	--root=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 install example/{*.py,README} $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-rm $RPM_BUILD_ROOT%{py_sitedir}/*.py
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog* NEWS README
+%doc README.txt
 %attr(755,root,root) %{py_sitedir}/_pycdio.so
 %attr(755,root,root) %{py_sitedir}/_pyiso9660.so
 %{py_sitedir}/cdio.py[co]
 %{py_sitedir}/iso9660.py[co]
 %{py_sitedir}/pycdio.py[co]
 %{py_sitedir}/pyiso9660.py[co]
+%{py_sitedir}/pycdio-%{version}-py*.egg-info
 
 %files examples
 %defattr(644,root,root,755)
