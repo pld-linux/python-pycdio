@@ -1,21 +1,21 @@
 Summary:	Python bindings for libcdio
 Summary(pl.UTF-8):	Wiązania Pythona do libcdio
 Name:		python-pycdio
-Version:	0.16
+Version:	0.18
 Release:	1
 License:	GPL v2+
 Group:		Libraries/Python
 Source0:	http://ftp.gnu.org/gnu/libcdio/pycdio-%{version}.tar.gz
-# Source0-md5:	bb2ffea5ae107e1e545f54f8bd9d6172
+# Source0-md5:	2dcf81641a79fc980e87661bc1d39e72
 URL:		http://www.gnu.org/software/libcdio/
-BuildRequires:	libcdio-devel >= 0.76
+BuildRequires:	libcdio-devel >= 0.84
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.3.5
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	swig-python
 %pyrequires_eq	python-libs
-Requires:	libcdio >= 0.76
+Requires:	libcdio >= 0.84
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
