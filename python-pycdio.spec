@@ -12,7 +12,7 @@ BuildRequires:	libcdio-devel >= 0.84
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.3.5
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	swig-python
 %pyrequires_eq	python-libs
 Requires:	libcdio >= 0.84
