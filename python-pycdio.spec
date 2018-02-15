@@ -1,5 +1,4 @@
-#
-# Conditional build:
+# # Conditional build:
 %bcond_without	python2	# CPython 2.x module
 %bcond_without	python3	# CPython 3.x module
 
@@ -7,7 +6,7 @@ Summary:	Python 2 bindings for libcdio
 Summary(pl.UTF-8):	Wiązania Pythona 2 do libcdio
 Name:		python-pycdio
 Version:	0.20
-Release:	5
+Release:	6
 License:	GPL v2+
 Group:		Libraries/Python
 Source0:	http://ftp.gnu.org/gnu/libcdio/pycdio-%{version}.tar.gz
