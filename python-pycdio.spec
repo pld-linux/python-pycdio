@@ -5,13 +5,12 @@
 Summary:	Python 2 bindings for libcdio
 Summary(pl.UTF-8):	Wiązania Pythona 2 do libcdio
 Name:		python-pycdio
-Version:	0.20
-Release:	6
+Version:	2.0.0
+Release:	1
 License:	GPL v2+
 Group:		Libraries/Python
 Source0:	http://ftp.gnu.org/gnu/libcdio/pycdio-%{version}.tar.gz
-# Source0-md5:	3f075574f661f49f4ede89aff9ff0cda
-Patch0:		%{name}-update.patch
+# Source0-md5:	09dd91ea81bf6ad13c8d8435779d307a
 URL:		http://www.gnu.org/software/libcdio/
 BuildRequires:	libcdio-devel >= 0.84
 BuildRequires:	pkgconfig
@@ -20,7 +19,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 BuildRequires:	swig-python >= 3
-Requires:	libcdio >= 0.84
+Requires:	libcdio >= 2.0.0
 Requires:	python-libs >= 1:2.3.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -57,7 +56,6 @@ Przykładowe programy w Pythonie używające libcdio.
 
 %prep
 %setup -q -n pycdio-%{version}
-%patch0 -p1
 
 %build
 %if %{with python2}
@@ -90,7 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python2}
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog README.txt THANKS
+%doc ChangeLog README.rst THANKS
 %attr(755,root,root) %{py_sitedir}/_pycdio.so
 %attr(755,root,root) %{py_sitedir}/_pyiso9660.so
 %{py_sitedir}/cdio.py[co]
@@ -103,7 +101,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python3}
 %files -n python3-pycdio
 %defattr(644,root,root,755)
-%doc ChangeLog README.txt THANKS
+%doc ChangeLog README.rst THANKS
 %attr(755,root,root) %{py3_sitedir}/_pycdio.cpython-*.so
 %attr(755,root,root) %{py3_sitedir}/_pyiso9660.cpython-*.so
 %{py3_sitedir}/cdio.py
