@@ -1,18 +1,19 @@
-# # Conditional build:
+#
+# Conditional build:
 %bcond_without	python2	# CPython 2.x module
 %bcond_without	python3	# CPython 3.x module
 
 Summary:	Python 2 bindings for libcdio
 Summary(pl.UTF-8):	Wiązania Pythona 2 do libcdio
 Name:		python-pycdio
-Version:	2.0.0
-Release:	3
+Version:	2.1.0
+Release:	1
 License:	GPL v2+
 Group:		Libraries/Python
-Source0:	http://ftp.gnu.org/gnu/libcdio/pycdio-%{version}.tar.gz
-# Source0-md5:	09dd91ea81bf6ad13c8d8435779d307a
+Source0:	https://ftp.gnu.org/gnu/libcdio/pycdio-%{version}.tar.gz
+# Source0-md5:	d1adcee07dc0f510a983547bf5046632
 URL:		http://www.gnu.org/software/libcdio/
-BuildRequires:	libcdio-devel >= 0.84
+BuildRequires:	libcdio-devel >= 2.0.0
 BuildRequires:	pkgconfig
 %{?with_python2:BuildRequires:	python-devel >= 1:2.3.5}
 %{?with_python3:BuildRequires:	python3-devel >= 1:3.2}
@@ -33,7 +34,7 @@ Wiązania Pythona 2 do libcdio.
 Summary:	Python 3 bindings for libcdio
 Summary(pl.UTF-8):	Wiązania Pythona 3 do libcdio
 Group:		Libraries/Python
-Requires:	libcdio >= 0.84
+Requires:	libcdio >= 2.0.0
 Requires:	python3-libs >= 1:3.2
 
 %description -n python3-pycdio
