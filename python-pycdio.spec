@@ -15,8 +15,14 @@ Source0:	https://ftp.gnu.org/gnu/libcdio/pycdio-%{version}.tar.gz
 URL:		http://www.gnu.org/software/libcdio/
 BuildRequires:	libcdio-devel >= 2.0.0
 BuildRequires:	pkgconfig
-%{?with_python2:BuildRequires:	python-devel >= 1:2.3.5}
-%{?with_python3:BuildRequires:	python3-devel >= 1:3.2}
+%if %{with python2}
+BuildRequires:	python-devel >= 1:2.3.5
+BuildRequires:	python-setuptools
+%endif
+%if %{with python3}
+BuildRequires:	python3-devel >= 1:3.2
+BuildRequires:	python3-setuptools
+%endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 BuildRequires:	swig-python >= 3
