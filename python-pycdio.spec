@@ -7,7 +7,7 @@ Summary:	Python 2 bindings for libcdio
 Summary(pl.UTF-8):	Wiązania Pythona 2 do libcdio
 Name:		python-pycdio
 Version:	2.1.0
-Release:	6
+Release:	7
 License:	GPL v2+
 Group:		Libraries/Python
 Source0:	https://ftp.gnu.org/gnu/libcdio/pycdio-%{version}.tar.gz
